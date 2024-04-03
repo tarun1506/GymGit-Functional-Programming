@@ -24,6 +24,6 @@ npm install
 npm run dev
 License: MIT License
 
-Google Drive Link to Business Requirement Document: https://docs.google.com/document/d/1k09ck8ooDY4ULoSoXB-jBAEZ3SxsNiT1fJbXf8NFEro/edit?usp=sharing
+Google Drive Link to Business Requirement Document: https://docs.google.com/document/d/1G9pvLGgpWS1Wj5sJ9qrGbYh_-3_rdZ3KzM-UiE5HUt0/edit?usp=sharing
 
 Yout tube link: https://youtu.be/vyijdYO2UYk
