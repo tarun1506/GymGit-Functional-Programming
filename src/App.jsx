@@ -31,7 +31,17 @@ export default function App() {
         activeTab={activeTab}
         handleTabClick={handleTabClick}
       />
-      <Link to="/forkpage" className="btn btn-outline-primary">
+      <Link
+        to={{
+          pathname: "/forkpage",
+          state: {
+            workoutData: workoutData,
+            activeTab: activeTab,
+            handleTabClick: handleTabClick,
+          },
+        }}
+        className="btn btn-outline-primary"
+      >
         Fork
       </Link>
       <Footer />

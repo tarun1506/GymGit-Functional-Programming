@@ -4,15 +4,15 @@ import {
   getFirestore,
   collection,
   getDocs,
-  // doc,
-  // setDoc,
+  doc,
+  setDoc,
   // getDocs,
   // deleteDoc,
   // query,
   // startAfter,
   // limit,
   // orderBy,
-  // updateDoc,
+  updateDoc,
 } from "firebase/firestore";
 function MyFirebase() {
   const firebaseConfig = {
@@ -37,9 +37,36 @@ function MyFirebase() {
     });
   };
 
+  const addScheduleWorkout = async (data) => {
+    const table = collection(db, "scheduleWorkoutTable");
+    await setDoc(doc(table), data);
+  };
+
+  const getScheduleCount = async () => {
+    const table = collection(db, "scheduleWorkoutTable");
+    return (await getDocs(table)).size;
+  };
+
+  const getScheduleWorkouts = async () => {
+    const table = collection(db, "scheduleWorkoutTable");
+    return (await getDocs(table)).docs.map((doc) => {
+      return (doc.data());
+    });
+
+  };
+
+  const updateScheduleWorkout = async (id, data) => {
+    const index = +id;
+    const table = collection(db, "scheduleWorkoutTable");
+    await updateDoc(doc(table, index), data);
+  };
+
   me.getWorkouts = getWorkouts;
+  me.addScheduleWorkout = addScheduleWorkout;
+  me.getScheduleCount = getScheduleCount;
+  me.getScheduleWorkouts = getScheduleWorkouts;
+  me.updateScheduleWorkout = updateScheduleWorkout;
   return me;
 }
-
 
 export const firebase = new MyFirebase();
