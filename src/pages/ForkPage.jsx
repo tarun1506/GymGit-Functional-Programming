@@ -19,6 +19,7 @@ export default function ForkPage() {
     };
     await firebase.addScheduleWorkout(newSchedule);
     setScheduleCount(scheduleCount + 1);
+    alert("New schedule added successfully");
   };
 
   const handleSave = async () => {
@@ -27,15 +28,15 @@ export default function ForkPage() {
         alert("Please select a schedule");
         return;
       }
-  
+
       console.log("currentSchedule", currentSchedule);
-  
+
       // Assuming forkedWorkoutData is an object
       await firebase.updateScheduleWorkout(String(currentSchedule), {
         id: currentSchedule,
         data: forkedWorkoutData,
       });
-  
+
       alert("Schedule saved successfully");
     } catch (error) {
       console.error("Error updating schedule:", error);
