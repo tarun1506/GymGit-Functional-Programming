@@ -53,4 +53,4 @@ If any of the tests fail, ensure that the GymGit application is running and acce
 
 ### Video Tutorial
 
-- [text](https://youtu.be/vyijdYO2UYk)
+- [Video](https://youtu.be/vyijdYO2UYk)
