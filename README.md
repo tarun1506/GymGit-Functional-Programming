@@ -1,29 +1,56 @@
 Author: Tarun M Date: 03/25/2024
 
-Overview: The Gym Workout Planner is a web application designed to help users plan and manage their gym workouts effectively. It provides a user-friendly interface for creating, editing, and organizing workout schedules, allowing users to track their progress and stay motivated.
+## GymGit Test
 
-Target Audience: The GymGit is designed for fitness enthusiasts, gym-goers, and anyone looking to establish a structured workout routine. It caters to users of all fitness levels, from beginners to advanced athletes, providing a flexible and customizable platform for achieving fitness goals.
+This document provides an overview of the Cypress tests for the GymGit application.
 
-Benefits: Organized Workout Planning: Users can plan and organize their workouts efficiently, ensuring a balanced and effective fitness regimen. Flexibility and Customization: Users can tailor their workout schedules to suit their individual preferences, goals, and fitness levels. Convenience: With user-friendly features and intuitive navigation, the application offers a convenient way for users to manage their fitness routines anytime, anywhere.
+### Prerequisites
 
-Features:
+Before running the tests, ensure that the GymGit application is running locally at `http://localhost:5173`.
 
-Tab Navigation: Users can navigate between different days of the week using tabs. Each tab represents a day of the week (e.g., Monday, Tuesday, etc.).
+### Running the Tests
 
-Editable Workout Table: The main content area displays an editable workout table. Users can add, edit, and delete workout rows within the table. Each row represents a workout exercise, including details like exercise name, sets, and reps.
+To run the tests, execute the following command:
 
-Save Options: Save: Allows users to save the current workout schedule. Save As New Schedule: Enables users to save the current workout schedule as a new schedule, incrementing the schedule count.
+```bash
+npm run cypress:open
+```
 
-View Schedule: Displays a list of saved schedules in an off-canvas sidebar. Schedule List: Shows a list of saved schedules that users can click to load and view.
+This command will open the Cypress Test Runner, where you can select and run the tests.
 
-Reset Internal Storage: The Logout button, located at the right side of the navigation bar, resets the internal storage when clicked. Clicking the Logout button clears all saved schedules and resets any stored data.
+### Test Descriptions
 
-How to Run
+#### 1. Home Page
 
-npm install
-npm run dev
-License: MIT License
+- **should load the app**: Checks if the GymGit application is loaded properly.
+- **should have a link to Home**: Verifies the presence of a link to the Home page in the navigation bar.
+- **should have a Fork Button**: Ensures the existence of a "Fork" button.
 
-Google Drive Link to Business Requirement Document: https://docs.google.com/document/d/1G9pvLGgpWS1Wj5sJ9qrGbYh_-3_rdZ3KzM-UiE5HUt0/edit?usp=sharing
+#### 2. Fork Page
 
-Yout tube link: https://youtu.be/vyijdYO2UYk
+- **Onclick of Fork Button, should redirect to ForkPage**: Tests if clicking the "Fork" button redirects to the ForkPage.
+- **should have a view schedule Button**: Verifies the presence of a "View Schedule" button.
+- **should have days navbar**: Checks if the days navbar exists.
+- **Navbar should have days**: Ensures that the navbar contains days of the week.
+
+#### 3. Schedule Page
+
+- **Onclick of View Schedule Button, should open Schedule offcanvas**: Tests if clicking the "View Schedule" button opens the Schedule offcanvas.
+
+#### 4. Save Schedule
+
+- **should have a Save Button**: Verifies the presence of a "Save" button.
+- **should have a Save As New Schedule Button**: Ensures the existence of a "Save As New Schedule" button.
+- **should save the schedule**: Tests the functionality to save the schedule and verifies the success alert.
+
+#### 5. Return to Home Page
+
+- **should return to Home Page**: Checks if clicking the GymGit logo returns to the Home page.
+
+### Troubleshooting
+
+If any of the tests fail, ensure that the GymGit application is running and accessible at `http://localhost:5173`. Additionally, check for any errors or inconsistencies in the application code that might affect test execution.
+
+### Video Tutorial
+
+- [text](https://youtu.be/vyijdYO2UYk)
